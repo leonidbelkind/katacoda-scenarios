@@ -23,7 +23,7 @@
         "text": "step3.md"
       },
       {
-        "title": "Step 4",
+        "title": "Summary",
         "text": "step4.md"
       } 
     ],
@@ -38,7 +38,7 @@
     "uieditorpath": "/root/example",
     "showide": true,
     "idePort": 23000,
-    "uilayout": "terminal"
+    "uilayout": "vscode-terminal-split"
   },
   "backend": {
     "imageid": "ubuntu"
