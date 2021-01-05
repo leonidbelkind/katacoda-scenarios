@@ -55,7 +55,7 @@
     }
   },
   "environment": {
-    "uilayout": "vscode",
+    "uilayout": "terminal",
     "showide": true
   },
   "backend": {
