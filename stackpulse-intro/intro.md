@@ -6,7 +6,7 @@
 
 
 
-Welcome to StackPulse Academy! The place where you can learn how to imnprove the reliability of your software services and their infrastructure.
+Welcome to StackPulse Academy! The place where you can learn how to improve the reliability of your software services and their infrastructure.
 
 In this **introductory scenario** you will learn the basic principles of developing a _StackPulse playbook_, deploying it for execution and running it.
 
