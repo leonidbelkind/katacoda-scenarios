@@ -55,7 +55,8 @@
     }
   },
   "environment": {
-    "uilayout": "vscode"
+    "uilayout": "vscode",
+    "showide": true
   },
   "backend": {
     "imageid": "vscode"
