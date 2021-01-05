@@ -36,7 +36,7 @@ To do that:
 
 ## Initialize Communication with StackPulse
 
-To install `stackpulse` CLI, In the terminal window to the right type:
+To install `stackpulse` CLI, In the terminal window to the right run (by clicking on the below "box"):
 `curl -O https://storage.googleapis.com/stackpulse-public/release/latest/linux/amd64/stackpulse;chmod +x ./stackpulse`{{execute}}
 
 `./stackpulse init`{{execute}}

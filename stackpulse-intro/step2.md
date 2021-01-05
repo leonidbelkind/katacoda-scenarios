@@ -14,7 +14,7 @@ In this tutorial we will use **Microsoft Visual Studio Code** to show how to dev
 
 
 
-Every playbook file begins with a "playbook header". Go ahead and click on  `first_playbook.yaml`{{open}}  to start editing.
+Every playbook file begins with a "playbook header". Go ahead, switch to the `IDE` tab (allow it a couple of moments to load) and click on  `first_playbook.yaml`{{open}}  to start editing.
 
 Now click on the below to create the playbook:
 
@@ -36,11 +36,6 @@ The `name` is particularly important, as it must be **unique** in your _StackPul
 
 As we mentioned, playbooks are automating a set of operations that would otherwise be performed by people. Each automation pipeline consists of one or more *steps*, each replacing a singular operation performed by a human operator.
 
-The following snippet will append the contents of the editor:
-
-<pre class="file" data-filename="first_playbook.yaml" data-target="append">console.log("Finishing...")
-</pre>
-
 
 Go ahead, add the below step to your playbook:
 
@@ -55,4 +50,5 @@ As you can see, every step also has a number of important parameters:
 * `name` is an identifier of an operation that this step performs. In this case, as you can see, it is an image of a *docker container* provided by _StackPulse_ to perform an _echo_ operation. Naturally, same type of operation can be performed multiple times in course of a single playbook, albeit in different steps (i.e., steps with different `id`)
 * `env` is a set of definitions for an _environment_ for the execution of this particular step. Think of them like of the _parameters_ that the step needs to perform its job. In this case, we are providing the message that the step needs to print.
 
+**Congratulations!** Our first playbook is ready. Please save the file in the IDE and lets move to the next step.
 
