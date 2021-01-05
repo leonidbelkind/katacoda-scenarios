@@ -14,11 +14,11 @@ In this tutorial we will use **Microsoft Visual Studio Code** to show how to dev
 
 
 
-Every playbook file begins with a "playbook header". Go ahead and click on the below example to start creating a playbook:
+Every playbook file begins with a "playbook header". Go ahead and click on  `first_playbook.yaml`{{open}}  to start editing.
 
+Now click on the below to create the playbook:
 
-<pre class="file" data-filename="first_playbook.yaml" data-target="replace">
-apiVersion: stackpulse.io/v1
+<pre class="file" data-filename="first_playbook.yaml" data-target="replace">apiVersion: stackpulse.io/v1
 kind: Playbook
 metadata:
   name: first_playbook
@@ -36,11 +36,12 @@ The `name` is particularly important, as it must be **unique** in your _StackPul
 
 As we mentioned, playbooks are automating a set of operations that would otherwise be performed by people. Each automation pipeline consists of one or more *steps*, each replacing a singular operation performed by a human operator.
 
-We will now add a very simple step, that prints out `"Hello, Playbooks World!" into its output.
+
+
+
 Go ahead, add the below step to your playbook:
 
-<pre class="file" data-filename="first_playbook.yaml" data-target="append">
-  - id: echo_step
+<pre class="file" data-filename="first_playbook.yaml" data-target="append">  - id: echo_step
     name: us-docker.pkg.dev/stackpulse/public/utils/echo
     env:
       MESSAGE: "Hello, Playbooks World!"
