@@ -38,7 +38,7 @@
     "uieditorpath": "/root/example",
     "uisettings": "YAML",
     "idePort": 23000,
-    "uilayout": "editor-terminal"
+    "uilayout": "vscode-terminal-split"
   },
   "backend": {
     "imageid": "ubuntu"
