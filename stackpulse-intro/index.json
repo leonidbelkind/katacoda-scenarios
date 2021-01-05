@@ -1,8 +1,12 @@
 {
+  "noindex": true,
   "title": "Introduction to StackPulse",
-  "description": "Introduction to playbooks automation with StackPulse",
+  "description": "Introduction to playbooks automation with StackPulse. Guides in creating the first playbook, uploading it to StackPulse account and executing it.",
   "difficulty": "Beginner",
   "time": "45 mintues",
+  "files": [
+    "first_playbook.yaml"
+  ],  
   "details": {
     "steps": [
       {
@@ -45,7 +49,7 @@
       {
         "title": "Step 10",
         "text": "step10.md"
-      }
+      } 
     ],
     "intro": {
       "text": "intro.md"
@@ -55,10 +59,12 @@
     }
   },
   "environment": {
-    "uilayout": "terminal",
-    "showide": true
+    "uieditorpath": "/root/example",
+    "showide": true,
+    "idePort": 23000,
+    "uilayout": "terminal"
   },
   "backend": {
-    "imageid": "vscode"
+    "imageid": "ubuntu"
   }
 }
