@@ -12,7 +12,7 @@ Now we will "apply" the newly created playbook to our _StackPulse_ account and t
 
 To apply (upload) your playbook into your StackPulse account, please run:
 
-`./stackpulse apply playbook -f example/first_playbook.yaml`{{execute}}
+`./stackpulse apply playbook -f first_playbook.yaml`{{execute}}
 
 If the operation is successful, a message similar to the below (albeit with a different ID) should be shown:
 ```bash
