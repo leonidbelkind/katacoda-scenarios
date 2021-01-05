@@ -1,7 +1,7 @@
 {
   "noindex": true,
   "title": "Playbooks with Multiple Steps",
-  "description": "Explanation of how playbooks that have multiple steps pass data from one step to another.",
+  "description": "Explanation of how playbooks that have multiple steps pass data from one step to another.\nThis scenario explains how to take output of one step in a playbook and use its parts to provide as arguments to another step.",
   "difficulty": "Beginner",
   "time": "10 minutes",
   "files": [
