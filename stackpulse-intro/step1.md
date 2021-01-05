@@ -36,14 +36,15 @@ To do that:
 
 ## Initialize Communication with StackPulse
 
-In the terminal window to the right type:
+To install `stackpulse` CLI, In the terminal window to the right type:
+`curl -O https://storage.googleapis.com/stackpulse-public/release/latest/linux/amd64/stackpulse;chmod +x ./stackpulse`{{execute}}
 
-`stackpulse init`{{execute}}
+`./stackpulse init`{{execute}}
 
 And provide the Client ID and Client Secret.
 
 
 To verify that the environment is operational run
-`stackpulse get playbooks`{{execute}}
+`./stackpulse get playbooks`{{execute}}
 
  
