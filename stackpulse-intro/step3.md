@@ -22,7 +22,7 @@ created "first_playbook" id="b351a757-92cb-44d0-942e-36828f8144ec"
 ## Executing a playbook
 
 To trigger an execution of your playbook, please run:
-`./stackpulse run first_playbook`{{execute}}
+`./stackpulse run playbook first_playbook`{{execute}}
 
 If the operation is successful, you will see an output similar to the below:
 

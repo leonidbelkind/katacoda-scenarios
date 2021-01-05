@@ -3,7 +3,7 @@
   "title": "Introduction to StackPulse",
   "description": "Introduction to playbooks automation with StackPulse. Guides in creating the first playbook, uploading it to StackPulse account and executing it.",
   "difficulty": "Beginner",
-  "time": "45 mintues",
+  "time": "10 minutes",
   "files": [
     "first_playbook.yaml"
   ],  
@@ -25,30 +25,6 @@
       {
         "title": "Step 4",
         "text": "step4.md"
-      },
-      {
-        "title": "Step 5",
-        "text": "step5.md"
-      },
-      {
-        "title": "Step 6",
-        "text": "step6.md"
-      },
-      {
-        "title": "Step 7",
-        "text": "step7.md"
-      },
-      {
-        "title": "Step 8",
-        "text": "step8.md"
-      },
-      {
-        "title": "Step 9",
-        "text": "step9.md"
-      },
-      {
-        "title": "Step 10",
-        "text": "step10.md"
       } 
     ],
     "intro": {
