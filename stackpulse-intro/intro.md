@@ -14,7 +14,7 @@ Pre-conditions? You need to have a [_StackPulse account_](https://stackpulse.com
 
 
 
-Ready to get started? Click on `Continue`....
+Ready to get started? Click on `Start Scenario`....
 
   
 
