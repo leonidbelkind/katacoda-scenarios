@@ -36,7 +36,10 @@ The `name` is particularly important, as it must be **unique** in your _StackPul
 
 As we mentioned, playbooks are automating a set of operations that would otherwise be performed by people. Each automation pipeline consists of one or more *steps*, each replacing a singular operation performed by a human operator.
 
+The following snippet will append the contents of the editor:
 
+<pre class="file" data-filename="first_playbook.yaml" data-target="append">console.log("Finishing...")
+</pre>
 
 
 Go ahead, add the below step to your playbook:
