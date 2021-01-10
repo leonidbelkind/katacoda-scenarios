@@ -112,6 +112,7 @@ Do a `Command+Click`/`Ctrl+Click` on the URL to see the execution results.
 
 (Please wait for the execution of all steps to be completed and click on the last step to see the _Verbose_ output):
 
+![echo_output](assets/echo_output.png) 
 
 
 
