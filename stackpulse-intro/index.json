@@ -1,6 +1,6 @@
 {
   "noindex": true,
-  "title": "Introduction to StackPulse",
+  "title": "Introduction to StackPulse Playbooks",
   "description": "Introduction to playbooks automation with StackPulse.\nThis scenario explains how to create the first playbook, upload it to StackPulse account and execute it.",
   "difficulty": "Beginner",
   "time": "10 minutes",

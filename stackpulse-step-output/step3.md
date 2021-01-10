@@ -75,7 +75,7 @@ Naturally, the access structure supports complex objects, allowing access to int
 Now lets combine retrieving the information from a step output with providing it as arguments to the subsequent steps. Lets add the below step to our playbook:
 
 
-<pre class="file" data-filename="multi_steps_playbook.yaml" data-target="append">  - id: echo_step
+<pre class="file" data-filename="multi_steps_playbook.yaml" data-target="append">    - id: echo_step
       name: us-docker.pkg.dev/stackpulse/public/utils/echo
       env:
         MESSAGE:   |
