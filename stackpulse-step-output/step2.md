@@ -127,9 +127,3 @@ This is the data structure returned by our first step:
 ```
 
 
-
-Looking at the _Output_ tab of the latest step we can see that this structure is processed for access in the following way:
-
-
-
-![parsed_output](assets/parsed_output.png)
