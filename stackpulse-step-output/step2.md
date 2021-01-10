@@ -2,53 +2,76 @@
 
 
 
-Now lets write your first playbook. 
+Lets create a playbook that will perform the following operations:
 
-Playbooks are declarative pipelines automating a set of operations that should otherwise be performed by engineers. They are either built in a [**Visual Planner**](https://app.stackpulse.io/playbook/create) provided by StackPulse or edited via any IDE of your choice.
-
-In this tutorial we will use **Microsoft Visual Studio Code** to show how to develop playbooks.
-
-
-
-## Playbook Structure
+1. Retrieve information about Endpoints of an Azure Cloud Service (using a dedicated command)
+2. Take specific Endpoints and print them out to playbook output
 
 
 
-Every playbook file begins with a "playbook header". Go ahead, switch to the `IDE` tab (allow it a couple of moments to load) and click on  `first_playbook.yaml`{{open}}  to start editing.
+## Playbook Header
+
+
+
+Every playbook file begins with a "playbook header". Go ahead, switch to the `IDE` and click on  `multi_steps_playbook.yaml`{{open}}  to start editing.
 
 Now click on the below to create the playbook:
 
-<pre class="file" data-filename="first_playbook.yaml" data-target="replace">apiVersion: stackpulse.io/v1
+<pre class="file" data-filename="multi_steps_playbook.yaml" data-target="replace">apiVersion: stackpulse.io/v1
 kind: Playbook
 metadata:
-  name: first_playbook
-  description: "First playbook created by a tutorial"
+  name: multi_steps_playbook
+  description: "Tutorial for creating a first multiple-steps playbook"
 steps:
 </pre>
 
 
-As you can see, every playbook has an `apiVersion` and a `kind` stating that it is a playbook, as well as `metadata` section covering its name, description and other important elements that we will learn about in the future.
-To learn more about playbooks, you can refer to [StackPulse Documentation](https://docs.stackpulse.io/playbooks/#playbook-structure)
 
-The `name` is particularly important, as it must be **unique** in your _StackPulse account_, and you will be referring to the playbook by its `name` in different situations.
+## First step
 
-## Adding Steps
-
-As we mentioned, playbooks are automating a set of operations that would otherwise be performed by people. Each automation pipeline consists of one or more *steps*, each replacing a singular operation performed by a human operator.
+As we mentioned, out first step is to retrieve an information about external services. In this particular example, we will use Microsoft Azure step to retrieve information about Endpoints of an Azure Cloud.
 
 
 Go ahead, add the below step to your playbook:
 
-<pre class="file" data-filename="first_playbook.yaml" data-target="append">  - id: echo_step
-    name: us-docker.pkg.dev/stackpulse/public/utils/echo
-    env:
-      MESSAGE: "Hello, Playbooks World!"
+<pre class="file" data-filename="multi_steps_playbook.yaml" data-target="append">    - name: microsoft/azure-cli
+    id: retrieve_azure_endpoints
+    args:
+      - az
+      - cloud
+      - show
+    output_parser:
+      name: us-docker.pkg.dev/stackpulse/public/json-parser
 </pre>
 
-As you can see, every step also has a number of important parameters:
-* `id` is an identifier of this particular step in the playbook. It can be used later to refer to certain findings / outputs that were provided by this step.
-* `name` is an identifier of an operation that this step performs. In this case, as you can see, it is an image of a *docker container* provided by _StackPulse_ to perform an _echo_ operation. Naturally, same type of operation can be performed multiple times in course of a single playbook, albeit in different steps (i.e., steps with different `id`)
-* `env` is a set of definitions for an _environment_ for the execution of this particular step. Think of them like of the _parameters_ that the step needs to perform its job. In this case, we are providing the message that the step needs to print.
+As you can see, we are using a generic `Azure CLI` container to make a call to Microsoft Azure API and retrieve information. Naturally, this is just an example, and any other operation retrieving information that might be required in another step of the process can come in its stead.
 
-**Congratulations!** Our first playbook is ready. Please save the file in the IDE and lets move to the next step.
+(Please note, that this step using the `output_parser` annotation because it uses a generic container, rather than a specific _StackPulse Step_. For more information on output parsers please refer to [StackPulse Documentation](https://docs.stackpulse.io/playbooks/#processing-step-output))
 
+Now, lets try to execute the playbook containing this step in order to familliarize ourselves with how the output looks:
+
+Please run the following commands in the terminal:
+
+`./stackpulse apply playbook -f multi_steps_playbook.yaml`{{execute}}
+
+If the operation is successful, a message similar to the below (albeit with a different ID) should be shown:
+
+```bash
+created "multi_steps_playbook" id="b351a757-92cb-44d0-942e-36828f8144ec"
+```
+
+
+To trigger an execution of your playbook, please run:
+`./stackpulse run playbook multi_steps_playbook`{{execute}}
+
+If the operation is successful, you will see an output similar to the below:
+
+```bash
+Running Playbook multi_steps_playbook
+
+Execution: https://app.stackpulse.io/execution/d5b69ca7-d935-4be4-ba78-d87c09d044fe
+```
+
+Do a `Command+Click`/`Ctrl+Click` on the URL to see the execution results.
+
+## Understanding step output
