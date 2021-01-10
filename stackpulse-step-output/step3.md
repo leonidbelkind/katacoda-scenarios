@@ -76,12 +76,12 @@ Now lets combine retrieving the information from a step output with providing it
 
 
 <pre class="file" data-filename="multi_steps_playbook.yaml" data-target="append">  - id: echo_step
-    name: us-docker.pkg.dev/stackpulse/public/utils/echo
-    env:
-      MESSAGE:   |
-           Retrieved Information About {{ $.retrieve_azure_endpoints.name }}
-           Is Active - {{ $.retrieve_azure_endpoints.isActive }}
-           Active Directory URL - {{ $.retrieve_azure_endpoints.endpoints.activeDirectory }}
+      name: us-docker.pkg.dev/stackpulse/public/utils/echo
+      env:
+        MESSAGE:   |
+             Retrieved Information About {{ $.retrieve_azure_endpoints.name }},
+             Is Active - {{ $.retrieve_azure_endpoints.isActive }},
+             Active Directory URL - {{ $.retrieve_azure_endpoints.endpoints.activeDirectory }},
 </pre>
 
 We have used information provided by the `retrieve_azure_endpoints` step in an argument (environment variable - MESSAGE) of an `echo_step` step, creating a multiline string containing a number of fields retrieved from the step output. We used the _template annotation_ (`{{ ... }}`) to refer to these fields.
@@ -109,6 +109,8 @@ Execution: https://app.stackpulse.io/execution/d5b69ca7-d935-4be4-ba78-d87c09d04
 ```
 
 Do a `Command+Click`/`Ctrl+Click` on the URL to see the execution results.
+
+(Please wait for the execution of all steps to be completed and click on the last step to see the _Verbose_ output):
 
 
 
