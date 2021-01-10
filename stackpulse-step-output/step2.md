@@ -35,13 +35,13 @@ As we mentioned, out first step is to retrieve an information about external ser
 Go ahead, add the below step to your playbook:
 
 <pre class="file" data-filename="multi_steps_playbook.yaml" data-target="append">    - name: microsoft/azure-cli
-    id: retrieve_azure_endpoints
-    args:
-      - az
-      - cloud
-      - show
-    output_parser:
-      name: us-docker.pkg.dev/stackpulse/public/json-parser
+      id: retrieve_azure_endpoints
+      args:
+        - az
+        - cloud
+        - show
+      output_parser:
+        name: us-docker.pkg.dev/stackpulse/public/json-parser
 </pre>
 
 As you can see, we are using a generic `Azure CLI` container to make a call to Microsoft Azure API and retrieve information. Naturally, this is just an example, and any other operation retrieving information that might be required in another step of the process can come in its stead.
@@ -75,3 +75,61 @@ Execution: https://app.stackpulse.io/execution/d5b69ca7-d935-4be4-ba78-d87c09d04
 Do a `Command+Click`/`Ctrl+Click` on the URL to see the execution results.
 
 ## Understanding step output
+
+
+
+After opening the execution in _StackPulse Portal_, please note the _Verbose_ step output containing the data retrieved:
+![azure_output](assets/ azure_cli_output.png)
+
+This is the data structure returned by our first step:
+
+```json
+{
+  "endpoints": {
+    "activeDirectory": "https://login.microsoftonline.com",
+    "activeDirectoryDataLakeResourceId": "https://datalake.azure.net/",
+    "activeDirectoryGraphResourceId": "https://graph.windows.net/",
+    "activeDirectoryResourceId": "https://management.core.windows.net/",
+    "appInsightsResourceId": "https://api.applicationinsights.io",
+    "appInsightsTelemetryChannelResourceId": "https://dc.applicationinsights.azure.com/v2/track",
+    "attestationResourceId": "https://attest.azure.net",
+    "batchResourceId": "https://batch.core.windows.net/",
+    "gallery": "https://gallery.azure.com/",
+    "logAnalyticsResourceId": "https://api.loganalytics.io",
+    "management": "https://management.core.windows.net/",
+    "mediaResourceId": "https://rest.media.azure.net",
+    "microsoftGraphResourceId": "https://graph.microsoft.com/",
+    "ossrdbmsResourceId": "https://ossrdbms-aad.database.windows.net",
+    "resourceManager": "https://management.azure.com/",
+    "sqlManagement": "https://management.core.windows.net:8443/",
+    "synapseAnalyticsResourceId": "https://dev.azuresynapse.net",
+    "vmImageAliasDoc": "https://raw.githubusercontent.com/Azure/azure-rest-api-specs/master/arm-compute/quickstart-templates/aliases.json"
+  },
+  "isActive": true,
+  "name": "AzureCloud",
+  "profile": "latest",
+  "suffixes": {
+    "acrLoginServerEndpoint": ".azurecr.io",
+    "attestationEndpoint": ".attest.azure.net",
+    "azureDatalakeAnalyticsCatalogAndJobEndpoint": "azuredatalakeanalytics.net",
+    "azureDatalakeStoreFileSystemEndpoint": "azuredatalakestore.net",
+    "keyvaultDns": ".vault.azure.net",
+    "mariadbServerEndpoint": ".mariadb.database.azure.com",
+    "mhsmDns": ".managedhsm.azure.net",
+    "mysqlServerEndpoint": ".mysql.database.azure.com",
+    "postgresqlServerEndpoint": ".postgres.database.azure.com",
+    "sqlServerHostname": ".database.windows.net",
+    "storageEndpoint": "core.windows.net",
+    "storageSyncEndpoint": "afs.azure.net",
+    "synapseAnalyticsEndpoint": ".dev.azuresynapse.net"
+  }
+}
+```
+
+
+
+Looking at the _Output_ tab of the latest step we can see that this structure is processed for access in the following way:
+
+
+
+![parsed_output](assets/parsed_output.png)
